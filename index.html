@@ -1,0 +1,1840 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repaso de Vocabulario Griego Koiné - Seminario Teológico Bautista de Cuba Oriental</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #1a4b8c;
+            --primary-dark: #0a1f3d;
+            --primary-light: #2e6ab1;
+            --secondary-color: #c9a227;
+            --secondary-light: #e6c44a;
+            --accent-color: #4c8bda;
+            --light-color: #f5f8ff;
+            --dark-color: #1a1a2e;
+            --success-color: #2e7d32;
+            --warning-color: #f57c00;
+            --card-bg: rgba(255, 255, 255, 0.98);
+            --shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+            --shadow-light: 0 5px 20px rgba(0, 0, 0, 0.08);
+            --border-radius: 16px;
+            --border-radius-sm: 10px;
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+            --glass-bg: rgba(255, 255, 255, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+        }
+
+        @font-face {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 300;
+            src: url(https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZJhiI2B.woff2) format('woff2');
+        }
+
+        @font-face {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 500;
+            src: url(https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuI6fAZJhiI2B.woff2) format('woff2');
+        }
+
+        @font-face {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 700;
+            src: url(https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuFuYAZJhiI2B.woff2) format('woff2');
+        }
+
+        body {
+            background: linear-gradient(135deg, #0a1f3d 0%, #1a4b8c 50%, #2e6ab1 100%);
+            color: var(--dark-color);
+            min-height: 100vh;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 20% 80%, rgba(201, 162, 39, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(46, 106, 177, 0.05) 0%, transparent 50%),
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120"><text x="10" y="60" font-family="Georgia" font-size="28" fill="rgba(255,255,255,0.03)" font-weight="bold">αβγδεζηθικλμνξοπρστυφχψω</text></svg>');
+            background-repeat: repeat;
+            opacity: 0.15;
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 0;
+            margin-bottom: 30px;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            backdrop-filter: blur(10px);
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--border-radius);
+            padding: 15px 25px;
+            box-shadow: var(--shadow-light);
+            transition: var(--transition);
+        }
+
+        .logo-container:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .logo-placeholder {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--secondary-color), var(--secondary-light));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-dark);
+            font-size: 24px;
+            font-weight: bold;
+            box-shadow: 0 8px 20px rgba(201, 162, 39, 0.3);
+            transition: var(--transition);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo-placeholder::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, transparent, rgba(255, 255, 255, 0.3));
+            border-radius: 50%;
+        }
+
+        .logo-placeholder:hover {
+            transform: scale(1.05) rotate(5deg);
+            box-shadow: 0 12px 25px rgba(201, 162, 39, 0.4);
+        }
+
+        .logo-text h1 {
+            color: white;
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+            font-weight: 700;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo-text p {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 0.95rem;
+            font-weight: 300;
+            letter-spacing: 0.3px;
+        }
+
+        .stats {
+            display: flex;
+            gap: 25px;
+            background: var(--glass-bg);
+            padding: 18px 30px;
+            border-radius: var(--border-radius);
+            backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--shadow-light);
+            transition: var(--transition);
+        }
+
+        .stats:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .stat-item {
+            text-align: center;
+            color: white;
+            min-width: 100px;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--secondary-light);
+            display: block;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            opacity: 0.9;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+        }
+
+        /* Main Content */
+        .main-content {
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            gap: 35px;
+            margin-bottom: 40px;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+            height: fit-content;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .sidebar h2 {
+            color: var(--primary-dark);
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--secondary-color);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+
+        .sidebar h2 i {
+            color: var(--secondary-color);
+            font-size: 1.3rem;
+        }
+
+        .lesson-list {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .lesson-item {
+            padding: 18px 20px;
+            margin-bottom: 12px;
+            background: white;
+            border-radius: var(--border-radius-sm);
+            cursor: pointer;
+            transition: var(--transition);
+            border: 2px solid #eaeaea;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .lesson-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: var(--primary-light);
+            transition: var(--transition);
+        }
+
+        .lesson-item:hover {
+            transform: translateX(8px);
+            box-shadow: var(--shadow-light);
+            border-color: var(--secondary-color);
+        }
+
+        .lesson-item:hover::before {
+            background: var(--secondary-color);
+            width: 8px;
+        }
+
+        .lesson-item.active {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+            color: white;
+            border-color: var(--secondary-color);
+            transform: translateX(8px);
+            box-shadow: 0 10px 25px rgba(26, 75, 140, 0.3);
+        }
+
+        .lesson-item.active::before {
+            background: var(--secondary-color);
+            width: 8px;
+        }
+
+        .lesson-number {
+            background: var(--secondary-color);
+            color: white;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 10px rgba(201, 162, 39, 0.3);
+            transition: var(--transition);
+        }
+
+        .lesson-item.active .lesson-number {
+            background: white;
+            color: var(--primary-dark);
+            transform: scale(1.1);
+        }
+
+        .lesson-info h3 {
+            font-size: 1.05rem;
+            margin-bottom: 6px;
+            font-weight: 600;
+        }
+
+        .lesson-count {
+            font-size: 0.8rem;
+            opacity: 0.8;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .lesson-progress {
+            display: inline-block;
+            width: 60px;
+            height: 6px;
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 3px;
+            overflow: hidden;
+            margin-left: 5px;
+        }
+
+        .lesson-progress-fill {
+            height: 100%;
+            background: var(--secondary-color);
+            border-radius: 3px;
+            transition: width 0.5s ease;
+        }
+
+        .lesson-item.active .lesson-count {
+            opacity: 0.9;
+        }
+
+        /* Progress Section */
+        .progress-section {
+            background: linear-gradient(135deg, #f8f9ff, #eef2ff);
+            border-radius: var(--border-radius-sm);
+            padding: 20px;
+            margin-top: 20px;
+            border: 1px solid #e0e7ff;
+        }
+
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .progress-header h3 {
+            color: var(--primary-dark);
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .progress-percent {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+        }
+
+        .progress-bar {
+            height: 10px;
+            background: #e0e7ff;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--secondary-color), var(--secondary-light));
+            border-radius: 5px;
+            width: 0%;
+            transition: width 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .progress-fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .progress-text {
+            font-size: 0.85rem;
+            color: #666;
+            text-align: center;
+        }
+
+        /* Vocabulary Section */
+        .vocabulary-section {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 35px;
+            box-shadow: var(--shadow);
+            min-height: 600px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .vocabulary-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid rgba(0, 0, 0, 0.08);
+        }
+
+        .vocabulary-header h2 {
+            color: var(--primary-dark);
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .vocabulary-header h2 .greek {
+            color: var(--primary-color);
+            font-family: 'Georgia', serif;
+            font-weight: normal;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .controls {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: var(--border-radius-sm);
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95rem;
+            letter-spacing: 0.3px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+            color: white;
+            box-shadow: 0 5px 15px rgba(46, 106, 177, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(46, 106, 177, 0.4);
+            background: linear-gradient(135deg, var(--primary-light), var(--primary-color));
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-light);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            background: var(--primary-light);
+            color: white;
+            border-color: var(--primary-light);
+        }
+
+        .btn-success {
+            background: linear-gradient(135deg, var(--success-color), #4caf50);
+            color: white;
+            box-shadow: 0 5px 15px rgba(46, 125, 50, 0.3);
+        }
+
+        .btn-success:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(46, 125, 50, 0.4);
+        }
+
+        /* Search Box */
+        .search-box {
+            margin-bottom: 30px;
+            position: relative;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 16px 20px 16px 55px;
+            border: 2px solid #e0e7ff;
+            border-radius: var(--border-radius-sm);
+            font-size: 1rem;
+            transition: var(--transition);
+            background: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 8px 20px rgba(26, 75, 140, 0.15);
+        }
+
+        .search-box i {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--primary-light);
+            font-size: 1.1rem;
+        }
+
+        /* Vocabulary Grid */
+        .vocabulary-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 25px;
+        }
+
+        /* Card */
+        .card {
+            background: white;
+            border-radius: var(--border-radius-sm);
+            padding: 25px;
+            box-shadow: var(--shadow-light);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            border-top: 4px solid var(--secondary-color);
+            border: 1px solid #eaeaea;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary-color), var(--secondary-light));
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+            border-color: var(--primary-light);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 18px;
+        }
+
+        .greek-word {
+            font-family: 'Georgia', serif;
+            font-size: 2.2rem;
+            color: var(--primary-dark);
+            font-weight: bold;
+            line-height: 1;
+        }
+
+        .frequency {
+            background: linear-gradient(135deg, var(--primary-light), var(--accent-color));
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: white;
+            box-shadow: 0 3px 8px rgba(46, 106, 177, 0.3);
+        }
+
+        .card-body {
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .meaning {
+            font-size: 1.4rem;
+            color: var(--dark-color);
+            margin-bottom: 12px;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        .form {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 12px;
+            font-style: italic;
+            padding: 8px 0;
+            border-top: 1px dashed #eee;
+            border-bottom: 1px dashed #eee;
+        }
+
+        .notes {
+            font-size: 0.9rem;
+            color: #777;
+            line-height: 1.5;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 18px;
+            border-top: 1px solid #eee;
+            margin-top: auto;
+        }
+
+        .lesson-tag {
+            background: rgba(201, 162, 39, 0.15);
+            color: var(--primary-dark);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .card-actions {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        /* Practice Toggle */
+        .practice-toggle {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+        }
+
+        .practice-checkbox {
+            width: 22px;
+            height: 22px;
+            border-radius: 6px;
+            border: 2px solid #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            background: white;
+        }
+
+        .practice-checkbox.checked {
+            background: var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+
+        .practice-checkbox i {
+            color: white;
+            font-size: 0.8rem;
+            opacity: 0;
+            transform: scale(0.5);
+            transition: var(--transition);
+        }
+
+        .practice-checkbox.checked i {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .practice-label {
+            font-size: 0.85rem;
+            color: #666;
+            font-weight: 500;
+        }
+
+        .practice-toggle:hover .practice-checkbox:not(.checked) {
+            border-color: var(--secondary-color);
+            transform: scale(1.1);
+        }
+
+        .practice-toggle:hover .practice-label {
+            color: var(--primary-color);
+        }
+
+        /* Audio Button */
+        .audio-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-light), var(--accent-color));
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+            color: white;
+            box-shadow: 0 4px 10px rgba(46, 106, 177, 0.3);
+        }
+
+        .audio-btn:hover {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 6px 15px rgba(46, 106, 177, 0.4);
+        }
+
+        .audio-btn:active {
+            transform: scale(0.95);
+        }
+
+        /* Empty State */
+        .empty-state {
+            text-align: center;
+            padding: 80px 20px;
+            color: #666;
+            grid-column: 1 / -1;
+        }
+
+        .empty-state i {
+            font-size: 4rem;
+            color: #e0e7ff;
+            margin-bottom: 25px;
+            display: block;
+            opacity: 0.7;
+        }
+
+        .empty-state h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--primary-dark);
+            font-weight: 700;
+        }
+
+        .empty-state p {
+            font-size: 1.1rem;
+            max-width: 500px;
+            margin: 0 auto;
+            line-height: 1.6;
+            color: #777;
+        }
+
+        /* Flash Cards Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 31, 61, 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: var(--border-radius);
+            width: 100%;
+            max-width: 800px;
+            max-height: 90vh;
+            overflow: hidden;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+            animation: slideUp 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .modal-header {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+            color: white;
+            padding: 25px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-header h2 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .modal-header h2 i {
+            color: var(--secondary-light);
+        }
+
+        .close-modal {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .close-modal:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: rotate(90deg);
+        }
+
+        .flashcard-container {
+            padding: 30px;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .flashcard {
+            width: 100%;
+            max-width: 500px;
+            height: 300px;
+            perspective: 1500px;
+            margin-bottom: 30px;
+        }
+
+        .flashcard-inner {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+        }
+
+        .flashcard.flipped .flashcard-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flashcard-front, .flashcard-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: var(--border-radius);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .flashcard-front {
+            background: linear-gradient(135deg, #f8f9ff, #eef2ff);
+            border: 2px solid var(--primary-light);
+        }
+
+        .flashcard-back {
+            background: white;
+            border: 2px solid var(--secondary-color);
+            transform: rotateY(180deg);
+        }
+
+        .flashcard-greek {
+            font-family: 'Georgia', serif;
+            font-size: 3.5rem;
+            color: var(--primary-dark);
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .flashcard-instruction {
+            color: var(--primary-light);
+            font-size: 1rem;
+            margin-top: 20px;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .flashcard-meaning {
+            font-size: 2rem;
+            color: var(--dark-color);
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .flashcard-details {
+            text-align: center;
+            color: #666;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .flashcard-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 500px;
+            margin-top: 20px;
+        }
+
+        .flashcard-nav {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .flashcard-counter {
+            font-weight: 600;
+            color: var(--primary-color);
+            min-width: 100px;
+            text-align: center;
+        }
+
+        .flashcard-practice-toggle {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 0 20px;
+            margin-top: 40px;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            line-height: 1.6;
+        }
+
+        footer p:first-child {
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .main-content {
+                grid-template-columns: 280px 1fr;
+            }
+            
+            .vocabulary-container {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            }
+        }
+
+        @media (max-width: 992px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats {
+                display: none;
+            }
+            
+            .vocabulary-container {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 25px;
+                text-align: center;
+            }
+            
+            .logo-container {
+                flex-direction: column;
+                text-align: center;
+                padding: 20px;
+                width: 100%;
+            }
+            
+            .vocabulary-header {
+                flex-direction: column;
+                gap: 20px;
+                align-items: flex-start;
+            }
+            
+            .controls {
+                width: 100%;
+                justify-content: space-between;
+            }
+            
+            .btn {
+                padding: 10px 18px;
+                font-size: 0.9rem;
+            }
+            
+            .vocabulary-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .flashcard {
+                height: 250px;
+            }
+            
+            .flashcard-greek {
+                font-size: 2.8rem;
+            }
+            
+            .flashcard-meaning {
+                font-size: 1.7rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 10px;
+            }
+            
+            body {
+                padding: 10px;
+            }
+            
+            .sidebar, .vocabulary-section {
+                padding: 20px;
+            }
+            
+            .lesson-item {
+                padding: 15px;
+            }
+            
+            .greek-word {
+                font-size: 1.8rem;
+            }
+            
+            .meaning {
+                font-size: 1.2rem;
+            }
+            
+            .flashcard-container {
+                padding: 20px;
+            }
+            
+            .flashcard {
+                height: 220px;
+            }
+            
+            .flashcard-greek {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <div class="logo-placeholder" id="logo-placeholder">
+                    <i class="fas fa-cross"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>Seminario Teológico Bautista</h1>
+                    <p>de Cuba Oriental - Idioma Griego I</p>
+                </div>
+            </div>
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-number" id="total-words">0</span>
+                    <span class="stat-label">Palabras Totales</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" id="total-lessons">5</span>
+                    <span class="stat-label">Lecciones</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" id="practice-count">0</span>
+                    <span class="stat-label">Aprendidas</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <div class="sidebar">
+                <h2><i class="fas fa-book-open"></i> Lecciones</h2>
+                <ul class="lesson-list" id="lesson-list">
+                    <!-- Las lecciones se cargarán aquí con JavaScript -->
+                </ul>
+                
+                <div class="progress-section">
+                    <div class="progress-header">
+                        <h3>Tu Progreso</h3>
+                        <span class="progress-percent" id="progress-percent">0%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill"></div>
+                    </div>
+                    <div class="progress-text" id="progress-text">0 de 0 palabras aprendidas</div>
+                </div>
+            </div>
+
+            <div class="vocabulary-section">
+                <div class="vocabulary-header">
+                    <h2>Vocabulario - <span class="greek" id="current-lesson-title">Selecciona una lección</span></h2>
+                    <div class="controls">
+                        <button class="btn btn-primary" id="practice-btn">
+                            <i class="fas fa-lightbulb"></i> Flash Cards
+                        </button>
+                        <button class="btn btn-secondary" id="search-toggle">
+                            <i class="fas fa-search"></i> Buscar
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="search-box" id="search-box" style="display: none;">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="search-input" placeholder="Buscar palabra en griego o español...">
+                </div>
+                
+                <div class="vocabulary-container" id="vocabulary-container">
+                    <div class="empty-state">
+                        <i class="fas fa-language"></i>
+                        <h3>Selecciona una lección para ver el vocabulario</h3>
+                        <p>Elige una lección del menú lateral para comenzar a repasar las palabras griegas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Flash Cards Modal -->
+        <div class="modal-overlay" id="flashcard-modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2><i class="fas fa-lightbulb"></i> Modo Flash Cards</h2>
+                    <button class="close-modal" id="close-modal">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="flashcard-container">
+                    <div class="flashcard" id="flashcard">
+                        <div class="flashcard-inner">
+                            <div class="flashcard-front">
+                                <div class="flashcard-greek" id="flashcard-greek"></div>
+                                <div class="flashcard-instruction">Haz clic para ver el significado</div>
+                            </div>
+                            <div class="flashcard-back">
+                                <div class="flashcard-meaning" id="flashcard-meaning"></div>
+                                <div class="flashcard-details">
+                                    <div id="flashcard-form"></div>
+                                    <div id="flashcard-notes"></div>
+                                </div>
+                                <div class="flashcard-instruction">Haz clic para volver a la palabra</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flashcard-controls">
+                        <div class="flashcard-nav">
+                            <button class="btn btn-secondary" id="prev-card">
+                                <i class="fas fa-chevron-left"></i> Anterior
+                            </button>
+                            <div class="flashcard-counter" id="flashcard-counter">1 / 10</div>
+                            <button class="btn btn-secondary" id="next-card">
+                                Siguiente <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                        
+                        <div class="flashcard-practice-toggle">
+                            <div class="practice-toggle" id="flashcard-practice-toggle">
+                                <div class="practice-checkbox" id="flashcard-checkbox">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                                <span class="practice-label">Marcar como aprendida</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2025 Seminario Teológico Bautista de Cuba Oriental - Asignatura: Idioma Griego I</p>
+            <p>Repaso de vocabulario de las lecciones 1-5 de Griego Koiné</p>
+        </footer>
+    </div>
+
+    <script>
+        // Vocabulario por lección
+        const vocabulary = {
+            "leccion1": [
+                {greek: "ἄγγελος", form: "-ου, ὁ", meaning: "ángel, mensajero", frequency: 175, notes: "Sustantivo masculino"},
+                {greek: "ἀμήν", form: "", meaning: "verdaderamente, amén, así sea", frequency: 129, notes: "Partícula indeclinable"},
+                {greek: "ἄνθρωπος", form: "-ου, ὁ", meaning: "hombre, humanidad, persona, gente, ser humano", frequency: 550, notes: "Sustantivo masculino"},
+                {greek: "ἀπόστολος", form: "-ου, ὁ", meaning: "apóstol, enviado, mensajero", frequency: 80, notes: "Sustantivo masculino"},
+                {greek: "Γαλιλαία", form: "-ας, ἡ", meaning: "Galilea", frequency: 61, notes: "Sustantivo femenino, nombre propio"},
+                {greek: "γραφή", form: "-ῆς, ἡ", meaning: "escritura, Escritura (Sagrada)", frequency: 50, notes: "Sustantivo femenino"},
+                {greek: "δόξα", form: "-ης, ἡ", meaning: "gloria, majestad, fama", frequency: 166, notes: "Sustantivo femenino"},
+                {greek: "ἐγώ", form: "", meaning: "yo", frequency: 1718, notes: "Pronombre personal"},
+                {greek: "ἔσχατος", form: "-η, -ον", meaning: "último", frequency: 52, notes: "Adjetivo"},
+                {greek: "ζωή", form: "-ῆς, ἡ", meaning: "vida", frequency: 135, notes: "Sustantivo femenino"},
+                {greek: "θεός", form: "-οῦ, ὁ", meaning: "Dios, dios", frequency: 1317, notes: "Sustantivo masculino"},
+                {greek: "καί", form: "", meaning: "y, incluso, también, a saber", frequency: 9018, notes: "Conjunción"},
+                {greek: "καρδία", form: "-ας, ἡ", meaning: "corazón, ser interior", frequency: 156, notes: "Sustantivo femenino"},
+                {greek: "κόσμος", form: "-ου, ὁ", meaning: "mundo, universo, humanidad", frequency: 186, notes: "Sustantivo masculino"},
+                {greek: "λόγος", form: "-ου, ὁ", meaning: "palabra, Palabra (Verbo), declaración, mensaje", frequency: 330, notes: "Sustantivo masculino"},
+                {greek: "πνεῦμα", form: "-ατος, τό", meaning: "espíritu, Espíritu (Santo), viento, aliento, vida interior", frequency: 379, notes: "Sustantivo neutro"},
+                {greek: "προφήτης", form: "-ου, ὁ", meaning: "profeta", frequency: 144, notes: "Sustantivo masculino"},
+                {greek: "σάββατον", form: "-ου, τό", meaning: "sábado, semana", frequency: 68, notes: "Sustantivo neutro"},
+                {greek: "φωνή", form: "-ῆς, ἡ", meaning: "sonido, ruido, voz", frequency: 139, notes: "Sustantivo femenino"},
+                {greek: "Χριστός", form: "-οῦ, ὁ", meaning: "Cristo, Mesías, Ungido", frequency: 529, notes: "Sustantivo masculino"}
+            ],
+            "leccion2": [
+                {greek: "ἀγάπη", form: "-ης, ἡ", meaning: "amor", frequency: 116, notes: "Sustantivo femenino"},
+                {greek: "ἄλλος", form: "-η, -ο", meaning: "otro, otra", frequency: 155, notes: "Adjetivo"},
+                {greek: "αὐτός", form: "-ή, -ό", meaning: "él, ella, ello (lo, la)", frequency: 5597, notes: "Pronombre personal"},
+                {greek: "βασιλεία", form: "-ας, ἡ", meaning: "reino", frequency: 162, notes: "Sustantivo femenino 1ª decl."},
+                {greek: "δέ", form: "(δ')", meaning: "pero, y", frequency: 2792, notes: "Postpositivo (va después de la primera palabra)"},
+                {greek: "ἐν", form: "", meaning: "en, dentro de, entre", frequency: 2752, notes: "Preposición"},
+                {greek: "ἔργον", form: "-ου, τό", meaning: "obra, acción, trabajo", frequency: 169, notes: "Sustantivo neutro 2ª decl."},
+                {greek: "καιρός", form: "-οῦ, ὁ", meaning: "tiempo (señalado), temporada", frequency: 85, notes: "Sustantivo masculino, 2 decl."},
+                {greek: "νῦν", form: "", meaning: "ahora (adv.) El presente (sust.)", frequency: 147, notes: "Adverbio/sustantivo"},
+                {greek: "ὁ, ἡ, τό", form: "", meaning: "el, la, lo", frequency: 19867, notes: "Artículo definido"},
+                {greek: "ὅτι", form: "", meaning: "que, porque, ya que (también como 'comillas')", frequency: 1296, notes: "Conjunción"},
+                {greek: "οὐ (οὐκ, οὐχ)", form: "", meaning: "no", frequency: 1623, notes: "οὐ + consonante, οὐκ + vocal suave, οὐχ + vocal áspera"},
+                {greek: "ὥρα", form: "-ας, ἡ", meaning: "hora, momento, ocasión", frequency: 106, notes: "Sustantivo femenino"}
+            ],
+            "leccion3": [
+                {greek: "ἀμαρτία", form: "-ας, ἡ", meaning: "pecado", frequency: 173, notes: "Sustantivo femenino 1ª decl."},
+                {greek: "ἀρχή", form: "-ῆς, ἡ", meaning: "principio, gobernante", frequency: 55, notes: "Sustantivo femenino 1ª decl."},
+                {greek: "γάρ", form: "", meaning: "pues, porque", frequency: 1041, notes: "Postpositivo (va después de la primera palabra)"},
+                {greek: "εἶπεν", form: "", meaning: "él/ella dijo", frequency: 613, notes: "3ª pers. sing. (forma flexionada de λέγω)"},
+                {greek: "εἰς", form: "", meaning: "en, dentro de, entre, hacia", frequency: 1767, notes: "Preposición (con acusativo)"},
+                {greek: "ἐξουσία", form: "-ας, ἡ", meaning: "autoridad, poder", frequency: 102, notes: "Sustantivo femenino 1ª decl."},
+                {greek: "εὐαγγέλιον", form: "-ου, τό", meaning: "buenas nuevas, Evangelio", frequency: 76, notes: "Sustantivo neutro 2ª decl."},
+                {greek: "Ἰησοῦς", form: "-οῦ, ὁ", meaning: "Jesús, Josué", frequency: 917, notes: "Sustantivo masculino; genitivo sing. = Ἰησοῦ"},
+                {greek: "κύριος", form: "-ου, ὁ", meaning: "Señor, amo, maestro", frequency: 717, notes: "Sustantivo masculino 2ª decl."},
+                {greek: "μή", form: "", meaning: "no, no sea que", frequency: 1042, notes: "Negación (para prohibiciones o subjuntivo)"},
+                {greek: "οὐρανός", form: "-οῦ, ὁ", meaning: "cielo, firmamento", frequency: 273, notes: "Sustantivo masculino 2ª decl."},
+                {greek: "οὗτος", form: "αὕτη, τοῦτο", meaning: "este/esta/esto (sing.); estos/estas (pl.)", frequency: 1387, notes: "Pronombre/adjetivo demostrativo"},
+                {greek: "σύ", form: "", meaning: "tú (singular)", frequency: 1067, notes: "Pronombre personal (plural = ὑμεῖς)"},
+                {greek: "υἱός", form: "-οῦ, ὁ", meaning: "hijo, descendiente", frequency: 377, notes: "Sustantivo masculino 2ª decl."},
+                {greek: "ὥστε", form: "", meaning: "por tanto, así que", frequency: 83, notes: "Conjunción consecutiva"}
+            ],
+            "leccion5": [
+                {greek: "ἀγαθός", form: "-ή, -όν", meaning: "bueno, útil", frequency: 102, notes: "Adjetivo de 3 terminaciones"},
+                {greek: "ἀγαπητός", form: "-ή, -όν", meaning: "amado, querido", frequency: 61, notes: "Adjetivo de 3 terminaciones"},
+                {greek: "αἰώνιος", form: "-ον", meaning: "eterno", frequency: 71, notes: "Adjetivo 2-2 - Misma forma para masc. y fem."},
+                {greek: "ἀλλήλων", form: "", meaning: "unos a otros, mutuamente", frequency: 100, notes: "Solo existe en plural y nunca en nominativo"},
+                {greek: "ἀπεκρίθη", form: "3a pers. sing. aor.", meaning: "respondió", frequency: 82, notes: "Verbo ἀποκρίνομαι. Lleva objeto en dativo"},
+                {greek: "δούλος", form: "-ου, ὁ", meaning: "esclavo, siervo", frequency: 126, notes: "Sustantivo masc. 2a decl."},
+                {greek: "ἐάν", form: "", meaning: "si, cuando", frequency: 350, notes: "Introduce oraciones dependientes"},
+                {greek: "ἐμός", form: "ἐμή, ἐμόν", meaning: "mío, mi", frequency: 76, notes: "Siempre significa 'mi(s)' incluso como sustantivado"},
+                {greek: "ἐντολή", form: "-ῆς, ἡ", meaning: "mandamiento", frequency: 67, notes: "Sustantivo fem. 1a decl."},
+                {greek: "καθώς", form: "", meaning: "como, así como", frequency: 182, notes: "Adverbio/conjunción comparativa"},
+                {greek: "κακός", form: "-ή, -όν", meaning: "malo, perverso", frequency: 50, notes: "Adjetivo de 3 terminaciones"},
+                {greek: "μου (ἐμοῦ)", form: "gen. sg.", meaning: "mío, de mí", frequency: 564, notes: "Genitivo de ἐγώ. Solo significa 'mi' en genitivo"},
+                {greek: "νεκρός", form: "-ά, -όν", meaning: "adj.: muerto sust.: cadáver", frequency: 128, notes: "Adjetivo/sustantivo"},
+                {greek: "πιστός", form: "-ή, -όν", meaning: "fiel, creyente", frequency: 67, notes: "Adjetivo de 3 terminaciones"},
+                {greek: "πονηρός", form: "-ά, -όν", meaning: "malvado, perverso", frequency: 78, notes: "Adjetivo de 3 terminaciones"},
+                {greek: "πρῶτος", form: "-η, -ον", meaning: "primero, anterior", frequency: 155, notes: "Adjetivo numeral"},
+                {greek: "τρίτος", form: "-η, -ον", meaning: "tercero", frequency: 56, notes: "Adjetivo numeral"}
+            ]
+        };
+
+        // Información de las lecciones
+        const lessons = [
+            {id: "leccion1", title: "Lección 1: Alfabeto y Pronunciación", count: vocabulary.leccion1.length},
+            {id: "leccion2", title: "Lección 2: Introducción a los Sustantivos", count: vocabulary.leccion2.length},
+            {id: "leccion3", title: "Lecciones 3-4: Declinaciones y Artículo", count: vocabulary.leccion3.length},
+            {id: "leccion5", title: "Lección 5: Adjetivos", count: vocabulary.leccion5.length}
+        ];
+
+        // Estado de la aplicación
+        let currentLesson = null;
+        let searchMode = false;
+        let practicedWords = JSON.parse(localStorage.getItem('practicedWords')) || [];
+        
+        // Estado para Flash Cards
+        let flashcardWords = [];
+        let currentFlashcardIndex = 0;
+        let flashcardLesson = null;
+
+        // Inicialización
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeApp();
+        });
+
+        function initializeApp() {
+            renderLessonList();
+            updateStats();
+            setupEventListeners();
+            loadLogo();
+        }
+
+        function renderLessonList() {
+            const lessonList = document.getElementById('lesson-list');
+            lessonList.innerHTML = '';
+            
+            lessons.forEach(lesson => {
+                const lessonItem = document.createElement('li');
+                lessonItem.className = 'lesson-item';
+                lessonItem.dataset.lesson = lesson.id;
+                
+                // Calcular progreso para esta lección
+                const lessonWords = vocabulary[lesson.id];
+                const practicedInLesson = practicedWords.filter(word => 
+                    lessonWords.some(vocab => vocab.greek === word)
+                ).length;
+                const progressPercent = lessonWords.length > 0 ? 
+                    Math.round((practicedInLesson / lessonWords.length) * 100) : 0;
+                
+                lessonItem.innerHTML = `
+                    <div class="lesson-number">${lesson.id.charAt(lesson.id.length-1)}</div>
+                    <div class="lesson-info">
+                        <h3>${lesson.title}</h3>
+                        <div class="lesson-count">
+                            ${lesson.count} palabras 
+                            <div class="lesson-progress">
+                                <div class="lesson-progress-fill" style="width: ${progressPercent}%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <i class="fas fa-chevron-right"></i>
+                `;
+                
+                lessonItem.addEventListener('click', () => selectLesson(lesson.id));
+                lessonList.appendChild(lessonItem);
+            });
+            
+            // Actualizar progreso general
+            updateOverallProgress();
+        }
+
+        function selectLesson(lessonId) {
+            currentLesson = lessonId;
+            
+            // Actualizar clase activa en la lista
+            document.querySelectorAll('.lesson-item').forEach(item => {
+                item.classList.remove('active');
+                if (item.dataset.lesson === lessonId) {
+                    item.classList.add('active');
+                }
+            });
+            
+            // Actualizar título
+            const lessonTitle = lessons.find(l => l.id === lessonId).title;
+            document.getElementById('current-lesson-title').textContent = lessonTitle;
+            
+            // Mostrar vocabulario
+            renderVocabulary(lessonId);
+            
+            // Actualizar estadísticas
+            updateStats();
+        }
+
+        function renderVocabulary(lessonId, searchTerm = '') {
+            const container = document.getElementById('vocabulary-container');
+            const words = vocabulary[lessonId];
+            
+            if (!words || words.length === 0) {
+                container.innerHTML = `
+                    <div class="empty-state">
+                        <i class="fas fa-exclamation-circle"></i>
+                        <h3>No hay vocabulario disponible para esta lección</h3>
+                        <p>Esta lección no contiene palabras de vocabulario para repasar.</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            // Filtrar por término de búsqueda si existe
+            let filteredWords = words;
+            if (searchTerm) {
+                const term = searchTerm.toLowerCase();
+                filteredWords = words.filter(word => 
+                    word.greek.toLowerCase().includes(term) || 
+                    word.meaning.toLowerCase().includes(term) ||
+                    (word.notes && word.notes.toLowerCase().includes(term))
+                );
+            }
+            
+            if (filteredWords.length === 0) {
+                container.innerHTML = `
+                    <div class="empty-state">
+                        <i class="fas fa-search"></i>
+                        <h3>No se encontraron resultados</h3>
+                        <p>No hay palabras que coincidan con "${searchTerm}".</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            // Ordenar por frecuencia (mayor a menor)
+            filteredWords.sort((a, b) => b.frequency - a.frequency);
+            
+            container.innerHTML = '';
+            
+            filteredWords.forEach(word => {
+                const isPracticed = practicedWords.includes(word.greek);
+                const card = document.createElement('div');
+                card.className = `card ${isPracticed ? 'practiced' : ''}`;
+                
+                card.innerHTML = `
+                    <div class="card-header">
+                        <div class="greek-word">${word.greek}</div>
+                        <div class="frequency">${word.frequency}</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="meaning">${word.meaning}</div>
+                        <div class="form">${word.form}</div>
+                        <div class="notes">${word.notes || ''}</div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="lesson-tag">${lessonId.replace('leccion', 'Lección ')}</div>
+                        <div class="card-actions">
+                            <div class="practice-toggle" data-word="${word.greek}">
+                                <div class="practice-checkbox ${isPracticed ? 'checked' : ''}">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                                <span class="practice-label">Aprendida</span>
+                            </div>
+                            <button class="audio-btn" data-word="${word.greek}">
+                                <i class="fas fa-volume-up"></i>
+                            </button>
+                        </div>
+                    </div>
+                `;
+                
+                // Evento para marcar como practicada
+                const practiceToggle = card.querySelector('.practice-toggle');
+                practiceToggle.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const word = this.dataset.word;
+                    togglePracticed(word);
+                    
+                    // Actualizar visualmente
+                    const checkbox = this.querySelector('.practice-checkbox');
+                    checkbox.classList.toggle('checked');
+                });
+                
+                // Evento para audio
+                const audioBtn = card.querySelector('.audio-btn');
+                audioBtn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const word = this.dataset.word;
+                    playGreekAudio(word);
+                });
+                
+                container.appendChild(card);
+            });
+        }
+
+        function togglePracticed(greekWord) {
+            const index = practicedWords.indexOf(greekWord);
+            if (index === -1) {
+                practicedWords.push(greekWord);
+                showToast(`"${greekWord}" marcada como aprendida`, 'success');
+            } else {
+                practicedWords.splice(index, 1);
+                showToast(`"${greekWord}" removida de aprendidas`, 'info');
+            }
+            
+            localStorage.setItem('practicedWords', JSON.stringify(practicedWords));
+            updateStats();
+            renderLessonList();
+            
+            // Si hay una lección seleccionada, volver a renderizar
+            if (currentLesson) {
+                renderVocabulary(currentLesson, document.getElementById('search-input').value);
+            }
+            
+            // Si estamos en modo flash cards, actualizar el checkbox
+            if (document.getElementById('flashcard-modal').style.display === 'flex') {
+                updateFlashcardCheckbox();
+            }
+        }
+
+        function playGreekAudio(greekWord) {
+            // Simulación de audio
+            const utterance = new SpeechSynthesisUtterance(greekWord);
+            utterance.lang = 'el-GR'; // Griego
+            utterance.rate = 0.7;
+            
+            // Intentar obtener una voz griega
+            const voices = speechSynthesis.getVoices();
+            const greekVoice = voices.find(voice => voice.lang === 'el-GR' || voice.lang === 'el');
+            
+            if (greekVoice) {
+                utterance.voice = greekVoice;
+            }
+            
+            speechSynthesis.speak(utterance);
+            
+            // Feedback visual
+            showToast(`Pronunciando: ${greekWord}`, 'info');
+        }
+
+        function updateStats() {
+            // Total de palabras en todas las lecciones
+            let totalWords = 0;
+            Object.values(vocabulary).forEach(lessonWords => {
+                totalWords += lessonWords.length;
+            });
+            
+            document.getElementById('total-words').textContent = totalWords;
+            document.getElementById('practice-count').textContent = practicedWords.length;
+            
+            // Actualizar progreso
+            updateOverallProgress();
+        }
+
+        function updateOverallProgress() {
+            // Calcular palabras totales
+            let totalWords = 0;
+            Object.values(vocabulary).forEach(lessonWords => {
+                totalWords += lessonWords.length;
+            });
+            
+            const progressPercent = totalWords > 0 ? 
+                Math.round((practicedWords.length / totalWords) * 100) : 0;
+            
+            document.getElementById('progress-fill').style.width = `${progressPercent}%`;
+            document.getElementById('progress-percent').textContent = `${progressPercent}%`;
+            document.getElementById('progress-text').textContent = `${practicedWords.length} de ${totalWords} palabras aprendidas`;
+        }
+
+        // Flash Cards Functions
+        function openFlashcardMode() {
+            if (!currentLesson) {
+                showToast('Primero selecciona una lección', 'warning');
+                return;
+            }
+            
+            flashcardLesson = currentLesson;
+            flashcardWords = [...vocabulary[currentLesson]];
+            currentFlashcardIndex = 0;
+            
+            // Mostrar modal
+            const modal = document.getElementById('flashcard-modal');
+            modal.style.display = 'flex';
+            
+            // Cargar primera tarjeta
+            loadFlashcard();
+        }
+
+        function loadFlashcard() {
+            if (flashcardWords.length === 0) return;
+            
+            const word = flashcardWords[currentFlashcardIndex];
+            const isPracticed = practicedWords.includes(word.greek);
+            
+            // Actualizar contenido
+            document.getElementById('flashcard-greek').textContent = word.greek;
+            document.getElementById('flashcard-meaning').textContent = word.meaning;
+            document.getElementById('flashcard-form').textContent = word.form;
+            document.getElementById('flashcard-notes').textContent = word.notes || '';
+            document.getElementById('flashcard-counter').textContent = `${currentFlashcardIndex + 1} / ${flashcardWords.length}`;
+            
+            // Actualizar checkbox
+            const checkbox = document.getElementById('flashcard-checkbox');
+            checkbox.classList.toggle('checked', isPracticed);
+            
+            // Asegurar que la tarjeta esté en el frente
+            const flashcard = document.getElementById('flashcard');
+            flashcard.classList.remove('flipped');
+        }
+
+        function nextFlashcard() {
+            if (flashcardWords.length === 0) return;
+            
+            currentFlashcardIndex++;
+            if (currentFlashcardIndex >= flashcardWords.length) {
+                currentFlashcardIndex = 0;
+            }
+            
+            loadFlashcard();
+        }
+
+        function prevFlashcard() {
+            if (flashcardWords.length === 0) return;
+            
+            currentFlashcardIndex--;
+            if (currentFlashcardIndex < 0) {
+                currentFlashcardIndex = flashcardWords.length - 1;
+            }
+            
+            loadFlashcard();
+        }
+
+        function updateFlashcardCheckbox() {
+            if (flashcardWords.length === 0) return;
+            
+            const currentWord = flashcardWords[currentFlashcardIndex];
+            const isPracticed = practicedWords.includes(currentWord.greek);
+            
+            const checkbox = document.getElementById('flashcard-checkbox');
+            checkbox.classList.toggle('checked', isPracticed);
+        }
+
+        function setupEventListeners() {
+            // Botón de Flash Cards
+            document.getElementById('practice-btn').addEventListener('click', openFlashcardMode);
+            
+            // Cerrar modal
+            document.getElementById('close-modal').addEventListener('click', function() {
+                document.getElementById('flashcard-modal').style.display = 'none';
+            });
+            
+            // Cerrar modal con Escape
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && document.getElementById('flashcard-modal').style.display === 'flex') {
+                    document.getElementById('flashcard-modal').style.display = 'none';
+                }
+            });
+            
+            // Controles de Flash Cards
+            document.getElementById('next-card').addEventListener('click', nextFlashcard);
+            document.getElementById('prev-card').addEventListener('click', prevFlashcard);
+            
+            // Voltear tarjeta al hacer clic
+            document.getElementById('flashcard').addEventListener('click', function() {
+                this.classList.toggle('flipped');
+            });
+            
+            // Marcar como aprendida en Flash Cards
+            document.getElementById('flashcard-practice-toggle').addEventListener('click', function() {
+                if (flashcardWords.length === 0) return;
+                
+                const currentWord = flashcardWords[currentFlashcardIndex];
+                togglePracticed(currentWord.greek);
+            });
+            
+            // Toggle búsqueda
+            document.getElementById('search-toggle').addEventListener('click', function() {
+                searchMode = !searchMode;
+                const searchBox = document.getElementById('search-box');
+                searchBox.style.display = searchMode ? 'block' : 'none';
+                
+                if (!searchMode) {
+                    // Limpiar búsqueda
+                    document.getElementById('search-input').value = '';
+                    if (currentLesson) {
+                        renderVocabulary(currentLesson);
+                    }
+                } else {
+                    document.getElementById('search-input').focus();
+                }
+            });
+            
+            // Búsqueda en tiempo real
+            document.getElementById('search-input').addEventListener('input', function() {
+                if (currentLesson) {
+                    renderVocabulary(currentLesson, this.value);
+                }
+            });
+            
+            // Cargar logo personalizado
+            document.getElementById('logo-placeholder').addEventListener('click', function() {
+                const input = document.createElement('input');
+                input.type = 'file';
+                input.accept = 'image/*';
+                input.onchange = function(e) {
+                    const file = e.target.files[0];
+                    if (file) {
+                        const reader = new FileReader();
+                        reader.onload = function(event) {
+                            const logoImg = document.createElement('img');
+                            logoImg.src = event.target.result;
+                            logoImg.style.width = '100%';
+                            logoImg.style.height = '100%';
+                            logoImg.style.borderRadius = '50%';
+                            logoImg.style.objectFit = 'cover';
+                            
+                            const logoPlaceholder = document.getElementById('logo-placeholder');
+                            logoPlaceholder.innerHTML = '';
+                            logoPlaceholder.appendChild(logoImg);
+                            
+                            // Guardar en localStorage
+                            localStorage.setItem('seminarioLogo', event.target.result);
+                        };
+                        reader.readAsDataURL(file);
+                    }
+                };
+                input.click();
+            });
+            
+            // Navegación con teclado en Flash Cards
+            document.addEventListener('keydown', function(e) {
+                if (document.getElementById('flashcard-modal').style.display !== 'flex') return;
+                
+                switch(e.key) {
+                    case 'ArrowRight':
+                        nextFlashcard();
+                        break;
+                    case 'ArrowLeft':
+                        prevFlashcard();
+                        break;
+                    case ' ':
+                    case 'Enter':
+                        e.preventDefault();
+                        document.getElementById('flashcard').classList.toggle('flipped');
+                        break;
+                    case 'm':
+                        if (flashcardWords.length > 0) {
+                            const currentWord = flashcardWords[currentFlashcardIndex];
+                            togglePracticed(currentWord.greek);
+                        }
+                        break;
+                }
+            });
+        }
+
+        function loadLogo() {
+            const savedLogo = localStorage.getItem('seminarioLogo');
+            if (savedLogo) {
+                const logoImg = document.createElement('img');
+                logoImg.src = savedLogo;
+                logoImg.style.width = '100%';
+                logoImg.style.height = '100%';
+                logoImg.style.borderRadius = '50%';
+                logoImg.style.objectFit = 'cover';
+                
+                const logoPlaceholder = document.getElementById('logo-placeholder');
+                logoPlaceholder.innerHTML = '';
+                logoPlaceholder.appendChild(logoImg);
+            }
+        }
+
+        function showToast(message, type = 'info') {
+            // Crear toast
+            const toast = document.createElement('div');
+            toast.className = `toast toast-${type}`;
+            
+            const icon = type === 'success' ? 'fa-check-circle' : 
+                        type === 'warning' ? 'fa-exclamation-triangle' : 'fa-info-circle';
+            
+            toast.innerHTML = `
+                <div class="toast-content">
+                    <i class="fas ${icon}"></i>
+                    <span>${message}</span>
+                </div>
+            `;
+            
+            // Estilos para toast
+            Object.assign(toast.style, {
+                position: 'fixed',
+                bottom: '30px',
+                right: '30px',
+                backgroundColor: type === 'success' ? 'var(--success-color)' : 
+                                type === 'warning' ? 'var(--warning-color)' : 'var(--primary-color)',
+                color: 'white',
+                padding: '16px 24px',
+                borderRadius: 'var(--border-radius-sm)',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '12px',
+                minWidth: '300px',
+                boxShadow: '0 10px 25px rgba(0,0,0,0.2)',
+                zIndex: '10000',
+                transform: 'translateY(100px)',
+                opacity: '0',
+                transition: 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+                backdropFilter: 'blur(10px)',
+                border: '1px solid rgba(255,255,255,0.1)'
+            });
+            
+            document.body.appendChild(toast);
+            
+            // Animar entrada
+            setTimeout(() => {
+                toast.style.opacity = '1';
+                toast.style.transform = 'translateY(0)';
+            }, 10);
+            
+            // Auto-eliminar después de 4 segundos
+            setTimeout(() => {
+                if (toast.parentNode) {
+                    toast.style.opacity = '0';
+                    toast.style.transform = 'translateY(100px)';
+                    setTimeout(() => {
+                        if (toast.parentNode) {
+                            toast.parentNode.removeChild(toast);
+                        }
+                    }, 400);
+                }
+            }, 4000);
+        }
+
+        // Seleccionar automáticamente la primera lección al cargar
+        setTimeout(() => {
+            if (lessons.length > 0) {
+                selectLesson(lessons[0].id);
+            }
+        }, 100);
+        
+        // Cargar voces para síntesis de voz
+        if (speechSynthesis.onvoiceschanged !== undefined) {
+            speechSynthesis.onvoiceschanged = function() {
+                // Voces cargadas
+            };
+        }
+    </script>
+</body>
+</html>
