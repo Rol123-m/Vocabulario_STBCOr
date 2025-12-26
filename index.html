@@ -1006,91 +1006,489 @@
                 grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             }
         }
+ 
 
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                gap: 25px;
-                text-align: center;
-            }
-            
-            .logo-container {
-                flex-direction: column;
-                text-align: center;
-                padding: 20px;
-                width: 100%;
-            }
-            
-            .vocabulary-header {
-                flex-direction: column;
-                gap: 20px;
-                align-items: flex-start;
-            }
-            
-            .controls {
-                width: 100%;
-                justify-content: space-between;
-            }
-            
-            .btn {
-                padding: 10px 18px;
-                font-size: 0.9rem;
-            }
-            
-            .vocabulary-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .flashcard {
-                height: 250px;
-            }
-            
-            .flashcard-greek {
-                font-size: 2.8rem;
-            }
-            
-            .flashcard-meaning {
-                font-size: 1.7rem;
-            }
-        }
+        /* ============================================
+   RESPONSIVE PARA MÓVILES (max-width: 768px)
+   ============================================ */
 
-        @media (max-width: 480px) {
-            .container {
-                padding: 10px;
-            }
-            
-            body {
-                padding: 10px;
-            }
-            
-            .sidebar, .vocabulary-section {
-                padding: 20px;
-            }
-            
-            .lesson-item {
-                padding: 15px;
-            }
-            
-            .greek-word {
-                font-size: 1.8rem;
-            }
-            
-            .meaning {
-                font-size: 1.2rem;
-            }
-            
-            .flashcard-container {
-                padding: 20px;
-            }
-            
-            .flashcard {
-                height: 220px;
-            }
-            
-            .flashcard-greek {
-                font-size: 2.2rem;
-            }
+@media (max-width: 768px) {
+    /* Ajustes generales */
+    body {
+        padding: 12px;
+    }
+    
+    .container {
+        padding: 0 8px;
+    }
+    
+    /* Header responsive */
+    header {
+        flex-direction: column;
+        gap: 20px;
+        padding: 15px 0 20px;
+    }
+    
+    .logo-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 18px 15px;
+        width: 100%;
+        gap: 15px;
+        backdrop-filter: none;
+        background: rgba(255, 255, 255, 0.08);
+    }
+    
+    .logo-placeholder {
+        width: 65px;
+        height: 65px;
+        margin: 0 auto;
+    }
+    
+    .logo-text h1 {
+        font-size: 1.4rem;
+        line-height: 1.3;
+    }
+    
+    .logo-text p {
+        font-size: 0.85rem;
+    }
+    
+    .stats {
+        width: 100%;
+        justify-content: space-around;
+        padding: 15px 10px;
+        gap: 15px;
+        backdrop-filter: none;
+    }
+    
+    .stat-item {
+        min-width: auto;
+        flex: 1;
+    }
+    
+    .stat-number {
+        font-size: 1.7rem;
+    }
+    
+    .stat-label {
+        font-size: 0.8rem;
+    }
+    
+    /* Layout principal */
+    .main-content {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        margin-bottom: 30px;
+    }
+    
+    /* Sidebar en móvil */
+    .sidebar {
+        padding: 22px;
+        border-radius: 14px;
+    }
+    
+    .sidebar h2 {
+        font-size: 1.3rem;
+        margin-bottom: 20px;
+    }
+    
+    .lesson-item {
+        padding: 16px;
+        margin-bottom: 10px;
+    }
+    
+    .lesson-info h3 {
+        font-size: 1rem;
+    }
+    
+    .lesson-count {
+        font-size: 0.78rem;
+    }
+    
+    .lesson-progress {
+        width: 50px;
+    }
+    
+    /* Vocabulario section */
+    .vocabulary-section {
+        padding: 22px;
+        min-height: auto;
+    }
+    
+    .vocabulary-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 18px;
+        margin-bottom: 25px;
+    }
+    
+    .vocabulary-header h2 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    
+    .controls {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .btn {
+        padding: 12px 18px;
+        font-size: 0.9rem;
+        flex: 1;
+        justify-content: center;
+    }
+    
+    /* Grid de vocabulario */
+    .vocabulary-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    /* Tarjetas de vocabulario */
+    .card {
+        padding: 22px;
+    }
+    
+    .greek-word {
+        font-size: 1.9rem;
+    }
+    
+    .meaning {
+        font-size: 1.2rem;
+    }
+    
+    .form {
+        font-size: 0.9rem;
+    }
+    
+    /* Search box */
+    .search-box {
+        margin-bottom: 25px;
+    }
+    
+    .search-box input {
+        padding: 14px 15px 14px 50px;
+    }
+    
+    /* Modal de Flash Cards en móvil */
+    .modal-overlay {
+        padding: 15px;
+    }
+    
+    .modal-content {
+        max-height: 95vh;
+        border-radius: 18px;
+    }
+    
+    .modal-header {
+        padding: 20px;
+    }
+    
+    .modal-header h2 {
+        font-size: 1.3rem;
+    }
+    
+    .flashcard-container {
+        padding: 20px;
+        min-height: 350px;
+    }
+    
+    .flashcard {
+        height: 260px;
+        margin-bottom: 25px;
+    }
+    
+    .flashcard-front, .flashcard-back {
+        padding: 30px 25px;
+    }
+    
+    .flashcard-greek {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+    }
+    
+    .flashcard-meaning {
+        font-size: 1.6rem;
+    }
+    
+    .flashcard-controls {
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+    }
+    
+    .flashcard-nav {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .flashcard-practice-toggle {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    /* Footer */
+    footer {
+        padding: 30px 0 15px;
+        font-size: 0.85rem;
+    }
+    
+    /* Progress section */
+    .progress-section {
+        padding: 18px;
+    }
+    
+    /* Toast notifications en móvil */
+    .toast {
+        min-width: 85vw !important;
+        max-width: 90vw !important;
+        left: 50% !important;
+        right: auto !important;
+        transform: translateX(-50%) translateY(100px) !important;
+        bottom: 20px !important;
+    }
+    
+    .toast.show {
+        transform: translateX(-50%) translateY(0) !important;
+    }
+}
+
+/* ============================================
+   RESPONSIVE PARA CELULARES PEQUEÑOS (max-width: 480px)
+   ============================================ */
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+    
+    .container {
+        padding: 0 5px;
+    }
+    
+    /* Header más compacto */
+    .logo-container {
+        padding: 15px 12px;
+    }
+    
+    .logo-placeholder {
+        width: 60px;
+        height: 60px;
+        font-size: 20px;
+    }
+    
+    .logo-text h1 {
+        font-size: 1.3rem;
+    }
+    
+    .stats {
+        padding: 12px 8px;
+        gap: 10px;
+    }
+    
+    .stat-number {
+        font-size: 1.5rem;
+    }
+    
+    .stat-label {
+        font-size: 0.75rem;
+    }
+    
+    /* Sidebar más compacta */
+    .sidebar {
+        padding: 18px;
+    }
+    
+    .lesson-item {
+        padding: 14px 12px;
+    }
+    
+    .lesson-number {
+        width: 32px;
+        height: 32px;
+        font-size: 1rem;
+    }
+    
+    /* Vocabulario section */
+    .vocabulary-section {
+        padding: 18px;
+    }
+    
+    .vocabulary-header h2 {
+        font-size: 1.3rem;
+    }
+    
+    .btn {
+        padding: 11px 15px;
+        font-size: 0.85rem;
+    }
+    
+    /* Tarjetas más compactas */
+    .card {
+        padding: 20px;
+    }
+    
+    .greek-word {
+        font-size: 1.7rem;
+    }
+    
+    .meaning {
+        font-size: 1.1rem;
+    }
+    
+    /* Flash Cards más pequeñas */
+    .flashcard {
+        height: 240px;
+    }
+    
+    .flashcard-greek {
+        font-size: 2.2rem;
+    }
+    
+    .flashcard-meaning {
+        font-size: 1.4rem;
+    }
+    
+    .flashcard-instruction {
+        font-size: 0.9rem;
+    }
+    
+    /* Ajustes para landscape en móviles */
+    @media (max-height: 500px) and (orientation: landscape) {
+        .main-content {
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
         }
+        
+        .sidebar {
+            max-height: 85vh;
+            overflow-y: auto;
+        }
+        
+        .vocabulary-section {
+            max-height: 85vh;
+            overflow-y: auto;
+        }
+        
+        .vocabulary-container {
+            grid-template-columns: 1fr;
+            max-height: 70vh;
+            overflow-y: auto;
+        }
+    }
+}
+
+/* ============================================
+   RESPONSIVE PARA TABLETS (max-width: 992px)
+   ============================================ */
+
+@media (max-width: 992px) and (min-width: 769px) {
+    .main-content {
+        grid-template-columns: 280px 1fr;
+        gap: 25px;
+    }
+    
+    .vocabulary-container {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+    
+    .stats {
+        display: flex !important;
+        gap: 20px;
+    }
+}
+
+/* ============================================
+   MEJORAS DE USABILIDAD TÁCTIL
+   ============================================ */
+
+@media (hover: none) and (pointer: coarse) {
+    /* Elementos más grandes para dedos */
+    .lesson-item,
+    .card,
+    .btn,
+    .audio-btn,
+    .practice-toggle {
+        min-height: 44px; /* Tamaño mínimo para dedos */
+    }
+    
+    .practice-checkbox {
+        width: 24px;
+        height: 24px;
+    }
+    
+    /* Remover hover effects que no funcionan en táctil */
+    .lesson-item:hover {
+        transform: none;
+    }
+    
+    .card:hover {
+        transform: none;
+    }
+    
+    .btn:hover {
+        transform: none;
+    }
+    
+    /* Añadir feedback táctil */
+    .lesson-item:active,
+    .card:active,
+    .btn:active {
+        opacity: 0.8;
+        transform: scale(0.98);
+    }
+    
+    /* Flash cards más fáciles de tocar */
+    .flashcard {
+        min-height: 280px;
+    }
+}
+
+/* ============================================
+   AJUSTES PARA PANTALLAS MUY ALTAS
+   ============================================ */
+
+@media (min-height: 1000px) {
+    .vocabulary-section {
+        min-height: 70vh;
+    }
+    
+    .flashcard-container {
+        min-height: 50vh;
+    }
+}
+
+/* ============================================
+   ORIENTACIÓN HORIZONTAL EN MÓVILES
+   ============================================ */
+
+@media (max-width: 768px) and (orientation: landscape) {
+    .main-content {
+        grid-template-columns: 250px 1fr;
+        gap: 20px;
+    }
+    
+    .sidebar {
+        max-height: 85vh;
+        overflow-y: auto;
+    }
+    
+    .vocabulary-container {
+        max-height: 75vh;
+        overflow-y: auto;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+    
+    .flashcard-container {
+        min-height: 60vh;
+    }
+    
+    .flashcard {
+        height: 220px;
+    }
+}
     </style>
 </head>
 <body>
